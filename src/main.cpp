@@ -5,7 +5,7 @@
 
 // include/config.h must be added by the user.
 // It may contain sensitive data that
-// should not got in source control
+// should not stored in source control
 #include "config.h"
 // Expected contents:
 /*
@@ -37,9 +37,7 @@ void setup()
     });
 
     bool res;
-    // res = wm.autoConnect(); // auto generated AP name from chipid
-    // res = wm.autoConnect("AutoConnectAP"); // anonymous ap
-    res = wm.autoConnect("ResistorClock", "Ohms Law"); // password protected ap
+    res = wm.autoConnect("ResistorClock", "Ohms Law");
 
     if (!res)
     {
@@ -49,11 +47,9 @@ void setup()
     } 
     else
     {
-        //if you get here you have connected to the WiFi    
         Serial.println("Connected to wireless network");
     }
 
-    // wifi_setup(HOST_NAME, SSID, SSID_PASSWORD);
     ota_setup(HOST_NAME, OTA_PASSWORD);
     Serial.println("Clock Sketch Setup");
 
@@ -64,7 +60,6 @@ void setup()
 
 void loop()
 {
-    // wifi_onLoop();
     ota_onLoop();
     app.on_loop();
     auto t = millis();
