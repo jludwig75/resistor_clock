@@ -3,7 +3,7 @@
 #include <WiFiManager.h>
 #include "clockapp.h"
 
-// config.h must be added by the user.
+// include/config.h must be added by the user.
 // It may contain sensitive data that
 // should not got in source control
 #include "config.h"
