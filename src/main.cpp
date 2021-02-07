@@ -1,11 +1,20 @@
 #include <Arduino.h>
-#include <BasicWifi.h>
 #include <BasicOTA.h>
 #include <WiFiManager.h>
 #include "clockapp.h"
 
+// config.h must be added by the user.
+// It may contain sensitive data that
+// should not got in source control
 #include "config.h"
+// Expected contents:
+/*
+#pragma once
 
+
+#define HOST_NAME       "resistor_clock"
+#define OTA_PASSWORD    "OTA password"
+*/
 
 ClockApp app;
 unsigned long last;
